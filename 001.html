@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Studio - Agensi Digital & Pengembangan Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AlpineJS untuk Interaktivitas (Mobile Menu & Modal) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white" x-data="{ mobileMenu: false }">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-tight text-white flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-lg">A</span>
+                ApexStudio
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#tentang" class="hover:text-blue-400 transition-colors">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-blue-400 transition-colors">Layanan</a>
+                <a href="#portfolio" class="hover:text-blue-400 transition-colors">Portfolio</a>
+                <a href="#testimoni" class="hover:text-blue-400 transition-colors">Testimoni</a>
+                <a href="#faq" class="hover:text-blue-400 transition-colors">FAQ</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#kontak" class="bg-blue-600 hover:bg-blue-500 text-white font-medium px-5 py-2.5 rounded-full transition-all shadow-lg shadow-blue-600/30 hover:scale-105 active:scale-95 text-sm">
+                    Hubungi Kami
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenu = !mobileMenu" class="lg:hidden text-slate-300 focus:outline-none p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path x-show="!mobileMenu" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    <path x-show="mobileMenu" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="mobileMenu" x-transition class="lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-6 space-y-4">
+            <a href="#tentang" @click="mobileMenu = false" class="block text-slate-300 hover:text-blue-400">Tentang Kami</a>
+            <a href="#layanan" @click="mobileMenu = false" class="block text-slate-300 hover:text-blue-400">Layanan</a>
+            <a href="#portfolio" @click="mobileMenu = false" class="block text-slate-300 hover:text-blue-400">Portfolio</a>
+            <a href="#testimoni" @click="mobileMenu = false" class="block text-slate-300 hover:text-blue-400">Testimoni</a>
+            <a href="#faq" @click="mobileMenu = false" class="block text-slate-300 hover:text-blue-400">FAQ</a>
+            <a href="#kontak" @click="mobileMenu = false" class="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-medium">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-36 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/15 blur-[140px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                🚀 Agensi Digital #1 Berbasis Inovasi
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-5xl mx-auto leading-tight">
+                Membangun Produk Digital Berkualitas Tinggi & <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">Berskala Bisnis</span>
+            </h1>
+            <p class="mt-8 text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                Kami membantu perusahaan dan startup mentransformasikan ide cemerlang menjadi aplikasi web, mobile, serta identitas brand yang memikat jutaan pengguna.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#kontak" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-medium px-8 py-4 rounded-full transition-all shadow-xl shadow-blue-600/25 hover:scale-105">
+                    Konsultasi Gratis
+                </a>
+                <a href="#portfolio" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-medium px-8 py-4 rounded-full transition-all hover:border-slate-700">
+                    Lihat Hasil Karya
+                </a>
+            </div>
+
+            <!-- STATISTIK RINGKAS -->
+            <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 pt-12 border-t border-slate-800/80 max-w-5xl mx-auto">
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-extrabold text-white">150+</h3>
+                    <p class="text-sm text-slate-400 mt-1">Proyek Selesai</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-extrabold text-white">99%</h3>
+                    <p class="text-sm text-slate-400 mt-1">Kepuasan Klien</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-extrabold text-white">8+</h3>
+                    <p class="text-sm text-slate-400 mt-1">Tahun Pengalaman</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-extrabold text-white">24/7</h3>
+                    <p class="text-sm text-slate-400 mt-1">Dukungan Teknis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="py-24 bg-slate-900/40 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="text-blue-400 font-semibold text-sm tracking-wider uppercase">Tentang Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        Dedikasi Kami Adalah Menghadirkan Solusi Digital Tanpa Kompromi
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Apex Studio adalah tim desainer, pengembang software, dan pakar strategi digital yang berfokus pada hasil. Kami percaya bahwa setiap produk digital harus memiliki perpaduan antara desain visual yang indah dan fungsionalitas yang responsif.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-white">Desain Berbasis Data & Pengguna</h4>
+                                <p class="text-sm text-slate-400 mt-1">Mengutamakan kemudahan navigasi pengguna (UI/UX) untuk tingkat konversi maksimal.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-white">Teknologi Modern & Aman</h4>
+                                <p class="text-sm text-slate-400 mt-1">Menggunakan stack teknologi terbaru yang cepat, responsif, dan aman dari peretasan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="aspect-video lg:aspect-square rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-900 p-1">
+                        <div class="w-full h-full bg-slate-900 rounded-[15px] p-8 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs font-mono">Visi Kami</span>
+                                <h3 class="text-2xl font-bold text-white">Menjadi mitra transformasi digital paling terpercaya di kawasan Asia Pasifik.</h3>
+                            </div>
+                            <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700/50">
+                                <p class="text-sm text-slate-300 italic">"Kualitas kode dan desain adalah pilar utama dari setiap baris karya yang kami bangun."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN KAMI -->
+    <section id="layanan" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-blue-400 font-semibold text-sm tracking-wider uppercase">Layanan Utama</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Solusi Lengkap Kebutuhan Digital Anda</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Web Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pengembangan website khusus (Custom Web), E-commerce, dan Sistem SaaS modern yang cepat dan SEO-friendly.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mobile App Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Aplikasi iOS dan Android berbasis Flutter / React Native dengan performa native dan tampilan intuitif.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">UI/UX Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Riset riset pengguna, prototipe fungsional, dan desain antarmuka estetis untuk memaksimalkan pengalaman pengguna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-24 bg-slate-900/40 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-blue-400 font-semibold text-sm tracking-wider uppercase">Portfolio Pilihan</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Karya Terbaik Kami</h2>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all group">
+                    <div class="h-52 bg-gradient-to-br from-blue-900/80 to-slate-800 flex items-center justify-center p-6">
+                        <span class="text-xl font-bold text-slate-300 group-hover:scale-105 transition-transform">Fintech Dashboard SaaS</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-blue-400 uppercase">Web App / Finance</span>
+                        <h3 class="text-lg font-bold text-white mt-1">PayFlow - Platform Manajemen Keuangan</h3>
+                        <p class="text-sm text-slate-400 mt-2">Dasbor analitik keuangan real-time terintegrasi gateway pembayaran internasional.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all group">
+                    <div class="h-52 bg-gradient-to-br from-indigo-900/80 to-slate-800 flex items-center justify-center p-6">
+                        <span class="text-xl font-bold text-slate-300 group-hover:scale-105 transition-transform">E-Commerce Platform</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-blue-400 uppercase">E-Commerce / Fashion</span>
+                        <h3 class="text-lg font-bold text-white mt-1">LuxeMarket Store</h3>
+                        <p class="text-sm text-slate-400 mt-2">Toko online dengan pengalaman belanja super cepat berbasis Headless CMS.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all group">
+                    <div class="h-52 bg-gradient-to-br from-purple-900/80 to-slate-800 flex items-center justify-center p-6">
+                        <span class="text-xl font-bold text-slate-300 group-hover:scale-105 transition-transform">Healthcare Mobile App</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-blue-400 uppercase">Mobile App / Health</span>
+                        <h3 class="text-lg font-bold text-white mt-1">MediCare - Telemedis App</h3>
+                        <p class="text-sm text-slate-400 mt-2">Aplikasi konsultasi dokter online terintegrasi jadwal janji dan resep digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-blue-400 font-semibold text-sm tracking-wider uppercase">Testimoni Klien</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Apa Kata Mereka?</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <p class="text-slate-300 italic mb-6">"Apex Studio berhasil mentransformasikan aplikasi kami. Performa naik 200% dan desain UX baru membuat retensi pengguna kami meningkat signifikan."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white">B</div>
+                        <div>
+                            <h4 class="font-bold text-white">Budi Santoso</h4>
+                            <p class="text-xs text-slate-400">CEO di TechNusa Startup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <p class="text-slate-300 italic mb-6">"Pengerjaan sangat profesional dan tepat waktu. Komunikasi tim Apex luar biasa lancar dari tahap riset awal hingga peluncuran."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white">S</div>
+                        <div>
+                            <h4 class="font-bold text-white">Siti Rahma</h4>
+                            <p class="text-xs text-slate-400">Head of Product di RetailKita</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (Frequently Asked Questions) -->
+    <section id="faq" class="py-24 bg-slate-900/40 border-y border-slate-800/80">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-blue-400 font-semibold text-sm tracking-wider uppercase">Pertanyaan Umum</span>
+                <h2 class="text-3xl font-bold text-white mt-2">Sering Ditanyakan (FAQ)</h2>
+            </div>
+
+            <div class="space-y-4" x-data="{ active: null }">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
+                    <button @click="active = (active === 1 ? null : 1)" class="w-full p-6 text-left font-semibold text-white flex justify-between items-center">
+                        Berapa lama waktu pengerjaan sebuah project website?
+                        <span class="text-blue-400" x-text="active === 1 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="active === 1" x-collapse class="px-6 pb-6 text-slate-400 text-sm">
+                        Waktu pengerjaan bervariasi tergantung kompleksitas. Untuk landing page biasanya memakan waktu 1-2 minggu, sedangkan web/aplikasi kustom berkisar 4-8 minggu.
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
+                    <button @click="active = (active === 2 ? null : 2)" class="w-full p-6 text-left font-semibold text-white flex justify-between items-center">
+                        Apakah menyediakan dukungan maintenance setelah rilis?
+                        <span class="text-blue-400" x-text="active === 2 ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="active === 2" x-collapse class="px-6 pb-6 text-slate-400 text-sm">
+                        Ya, kami memberikan garansi pemeliharaan gratis selama 3 bulan pertama setelah produk dirilis untuk memastikan tidak ada bug atau kendala teknis.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK / FORMULIR -->
+    <section id="kontak" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <span class="text-blue-400 font-semibold text-sm tracking-wider uppercase">Mulai Kolaborasi</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-6">Punya Ide Proyek? Diskusi Bersama Tim Kami</h2>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        Kirimkan pesan Anda dan tim ahli kami akan segera menghubungi dalam kurun waktu kurang dari 24 jam.
+                    </p>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <p class="flex items-center gap-3">📍 <strong class="text-white">Alamat:</strong> Jakarta Selatan, Indonesia</p>
+                        <p class="flex items-center gap-3">✉️ <strong class="text-white">Email:</strong> hello@apexstudio.com</p>
+                        <p class="flex items-center gap-3">📞 <strong class="text-white">Telepon/WA:</strong> +62 812-3456-7890</p>
+                    </div>
+                </div>
+
+                <!-- Form Kontak -->
+                <form class="bg-slate-900/80 p-8 rounded-3xl border border-slate-800 space-y-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Nama Lengkap</label>
+                        <input type="text" placeholder="Masukkan nama Anda" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Alamat Email</label>
+                        <input type="email" placeholder="nama@email.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Pesan / Detail Proyek</label>
+                        <textarea rows="4" placeholder="Ceritakan ide atau kebutuhan bisnis Anda..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-4 rounded-xl transition-all shadow-lg shadow-blue-600/30">
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-slate-500 text-sm gap-6">
+            <p>&copy; 2026 Apex Studio. Hak Cipta Dilindungi.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-slate-300 transition-colors">Kebijakan Privasi</a>
+                <a href="#" class="hover:text-slate-300 transition-colors">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
